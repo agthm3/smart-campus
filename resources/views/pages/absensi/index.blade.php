@@ -14,9 +14,8 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-lg-2 ">
-                            <a href="{{ route('absensi.create') }}"
-                                class="form-control bg-primary text-white text-bold">Tambah Area
-                                Parkir +</a>
+                            <a href="{{ route('lab.create') }}" class="form-control bg-primary text-white text-bold">Tambah
+                                Ruangan +</a>
                         </div>
                     </div>
                     <!-- widgets -->
@@ -25,37 +24,41 @@
                             <div class="col-md-4">
                                 <a href="">
                                     <div class="card shadow mb-4">
-                                        <div class="card-body">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted mb-1">Laboratorium</small>
-                                                    <h3 class="card-title mb-0">
-                                                        {{ $item->name }}
-                                                    </h3>
-                                                    <h3 class="card-title mb-0">
-                                                        <form action="{{ route('labarea.destroy', $item) }}" method="post">
-                                                            @method('delete')
-                                                            @if ($errors->any())
-                                                                <div class="alert alert-danger">
-                                                                    <ul>
-                                                                        @foreach ($errors->all() as $error)
-                                                                            <li>{{ $error }}</li>
-                                                                        @endforeach
-                                                                    </ul>
-                                                                </div>
-                                                            @endif
-                                                            @csrf
-                                                            <button type="submit"
-                                                                class="form-control bg-danger text-white">Hapus</button>
-                                                        </form>
-                                                    </h3>
+                                        <form action="{{ route('lab.store') }}" method="post">
+                                            @csrf
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <small class="text-muted mb-1">Laboratorium</small>
+                                                        <h3 class="card-title mb-0">
+                                                            {{ $item->name }}
+                                                        </h3>
+
+                                                    </div>
+                                                    <div class="col-4 text-right">
+                                                        <span class="sparkline inlinebar"></span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-4 text-right">
-                                                    <span class="sparkline inlinebar"></span>
-                                                </div>
+                                                <!-- /. row -->
                                             </div>
-                                            <!-- /. row -->
-                                        </div>
+                                        </form>
+                                        <h3 class="card-title mb-0">
+                                            <form action="{{ route('labarea.destroy', $item) }}" method="post">
+                                                @method('delete')
+                                                @if ($errors->any())
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach ($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
+                                                @csrf
+                                                <button type="submit"
+                                                    class="form-control bg-danger text-white">Hapus</button>
+                                            </form>
+                                        </h3>
                                         <!-- /. card-body -->
                                     </div>
                                 </a>

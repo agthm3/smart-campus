@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form action="{{ route('absensi.store') }}" method="post">
+                                    <form action="{{ route('lab.store') }}" method="post">
                                         @csrf
                                         <div class="form-group mb-3">
                                             <label for="simpleinput">Nama Lab</label>
