@@ -26,7 +26,7 @@
 <body class="light">
     <div class="wrapper vh-100">
         <div class="row align-items-center h-100">
-            <form class="col-lg-6 col-md-8 col-10 mx-auto" method="post">
+            <form class="col-lg-6 col-md-8 col-10 mx-auto" action="{{ route('register') }}" method="post">
 
                 @csrf
                 <div class="mx-auto text-center my-4">
@@ -50,8 +50,39 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="firstname">Name</label>
-                        <input type="text" id="firstname" name="name" class="form-control" />
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputPassword5">NIM/NIP</label>
+                            <input type="text" name="nim" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword6">Jabatan</label>
+                            <select name="jabatan" id="type" class="form-control">
+                                <option value="mahasiswa">Mahasiswa</option>
+                                <option value="dosen" selected>Dosen</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputPassword6">Kendaraan</label>
+                            <select name="kendaraan" id="type" class="form-control">
+                                <option value="mobil">Mobil</option>
+                                <option value="motor">Motor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword5">Status Akun</label>
+                            <small class="form-control bg-warning text-white">Pending (Akun akan dikonfirmasi oleh
+                                admin)</small>
+                        </div>
+
                     </div>
                 </div>
                 <hr class="my-4" />
@@ -86,7 +117,7 @@
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
                     Sign up
                 </button>
-                <p class="mt-5 mb-3 text-muted text-center">© 2020</p>
+                <p class="mt-5 mb-3 text-muted text-center">© 2023</p>
             </form>
         </div>
     </div>
