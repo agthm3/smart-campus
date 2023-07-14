@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Absensi;
+use App\Models\Labarea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AbsensiController extends Controller
 {
@@ -11,8 +13,9 @@ class AbsensiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('pages.absensi.index');
+    {  
+        $labAreas = Labarea::all();
+        return view('pages.absensi.index', compact('labAreas'));
     }
 
 
@@ -22,7 +25,7 @@ class AbsensiController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**

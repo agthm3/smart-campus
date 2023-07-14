@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataMahasiswa;
+use App\Models\Labarea;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
-class DataMahasiswaController extends Controller
+class LabareaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $mahasiswas =DB::table('users')->where('jabatan', '=' , 'mahasiswa')->get();
-         return view('pages.datamahasiswa.index', compact('mahasiswas'));
+        //
     }
 
     /**
@@ -22,7 +21,7 @@ class DataMahasiswaController extends Controller
      */
     public function create()
     {
-        //
+         return view('pages.absensi.create');
     }
 
     /**
@@ -30,13 +29,22 @@ class DataMahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255|string'
+        ]);
+
+        Labarea::create([
+            'name' => $request->name 
+        ]);
+
+        return Redirect::route('absensi.index');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(DataMahasiswa $dataMahasiswa)
+    public function show(Labarea $labarea)
     {
         //
     }
@@ -44,7 +52,7 @@ class DataMahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DataMahasiswa $dataMahasiswa)
+    public function edit(Labarea $labarea)
     {
         //
     }
@@ -52,7 +60,7 @@ class DataMahasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataMahasiswa $dataMahasiswa)
+    public function update(Request $request, Labarea $labarea)
     {
         //
     }
@@ -60,7 +68,7 @@ class DataMahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataMahasiswa $dataMahasiswa)
+    public function destroy(Labarea $labarea)
     {
         //
     }

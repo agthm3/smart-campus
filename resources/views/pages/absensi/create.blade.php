@@ -1,66 +1,42 @@
 @extends('layouts.app')
-
 @section('content')
     <main role="main" class="main-content">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="row align-items-center mb-2">
-                        <div class="col">
-                            <h2 class="h5 page-title">
-                                Selamat Datang!
-                            </h2>
+                    <h2 class="page-title">Tambah Area Lab</h2>
+                    <p class="text-muted">Tambah area lab agar dapat dipilih oleh user.</p>
+                    <div class="card shadow mb-4">
+                        <div class="card-header">
+                            <strong class="card-title">Area Lab Baru</strong>
                         </div>
-                    </div>
-                    <div class="row align-items-center mb-2">
-                        <div class="col-lg-2 ">
-                            <a href="{{ route('absensi.create') }}"
-                                class="form-control bg-primary text-white text-bold">Tambah Area
-                                Parkir +</a>
-                        </div>
-                    </div>
-                    <!-- widgets -->
-                    <div class="row my-4">
-                        @foreach ($labAreas as $item)
-                            <div class="col-md-4">
-                                <a href="">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-body">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted mb-1">Laboratorium</small>
-                                                    <h3 class="card-title mb-0">
-                                                        {{ $item->name }}
-                                                    </h3>
-                                                </div>
-                                                <div class="col-4 text-right">
-                                                    <span class="sparkline inlinebar"></span>
-                                                </div>
-                                            </div>
-                                            <!-- /. row -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="{{ route('absensi.store') }}" method="post">
+                                        @csrf
+                                        <div class="form-group mb-3">
+                                            <label for="simpleinput">Nama Lab</label>
+                                            <input type="text" name="name" id="simpleinput" class="form-control">
                                         </div>
-                                        <!-- /. card-body -->
-                                    </div>
-                                </a>
-                                <!-- /. card -->
+                                        <button type="submit" class="form-control bg-primary text-white">Simpan</button>
+                                    </form>
+
+                                </div> <!-- /.col -->
+
                             </div>
-                        @endforeach
-                    </div>
-                    <!-- end section -->
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- .row -->
-        </div>
-        <!-- .container-fluid -->
+                        </div>
+                    </div> <!-- / .card -->
+
+                </div> <!-- .col-12 -->
+            </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="defaultModalLabel">
-                            Notifications
-                        </h5>
+                        <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -73,12 +49,8 @@
                                         <span class="fe fe-box fe-24"></span>
                                     </div>
                                     <div class="col">
-                                        <small><strong>Package has uploaded
-                                                successfull</strong></small>
-                                        <div class="my-0 text-muted small">
-                                            Package is zipped and
-                                            uploaded
-                                        </div>
+                                        <small><strong>Package has uploaded successfull</strong></small>
+                                        <div class="my-0 text-muted small">Package is zipped and uploaded</div>
                                         <small class="badge badge-pill badge-light text-muted">1m ago</small>
                                     </div>
                                 </div>
@@ -89,12 +61,8 @@
                                         <span class="fe fe-download fe-24"></span>
                                     </div>
                                     <div class="col">
-                                        <small><strong>Widgets are updated
-                                                successfull</strong></small>
-                                        <div class="my-0 text-muted small">
-                                            Just create new layout
-                                            Index, form, table
-                                        </div>
+                                        <small><strong>Widgets are updated successfull</strong></small>
+                                        <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
                                         <small class="badge badge-pill badge-light text-muted">2m ago</small>
                                     </div>
                                 </div>
@@ -105,16 +73,11 @@
                                         <span class="fe fe-inbox fe-24"></span>
                                     </div>
                                     <div class="col">
-                                        <small><strong>Notifications have been
-                                                sent</strong></small>
-                                        <div class="my-0 text-muted small">
-                                            Fusce dapibus, tellus ac
-                                            cursus commodo
-                                        </div>
+                                        <small><strong>Notifications have been sent</strong></small>
+                                        <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
                                         <small class="badge badge-pill badge-light text-muted">30m ago</small>
                                     </div>
-                                </div>
-                                <!-- / .row -->
+                                </div> <!-- / .row -->
                             </div>
                             <div class="list-group-item bg-transparent">
                                 <div class="row align-items-center">
@@ -122,24 +85,17 @@
                                         <span class="fe fe-link fe-24"></span>
                                     </div>
                                     <div class="col">
-                                        <small><strong>Link was attached to
-                                                menu</strong></small>
-                                        <div class="my-0 text-muted small">
-                                            New layout has been attached
-                                            to the menu
-                                        </div>
+                                        <small><strong>Link was attached to menu</strong></small>
+                                        <div class="my-0 text-muted small">New layout has been attached to the menu</div>
                                         <small class="badge badge-pill badge-light text-muted">1h ago</small>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- / .row -->
-                        </div>
-                        <!-- / .list-group -->
+                            </div> <!-- / .row -->
+                        </div> <!-- / .list-group -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
-                            Clear All
-                        </button>
+                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear
+                            All</button>
                     </div>
                 </div>
             </div>
@@ -149,9 +105,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="defaultModalLabel">
-                            Shortcuts
-                        </h5>
+                        <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -203,5 +157,5 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> <!-- main -->
 @endsection

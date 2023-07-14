@@ -60,57 +60,58 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="avatar avatar-md">
-                                                        <img src="./assets/avatars/face-3.jpg" alt="..."
-                                                            class="avatar-img rounded-circle" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="mb-0 text-muted">
-                                                        <strong>Yusuf
-                                                            D.</strong>
-                                                    </p>
-                                                    <small class="mb-0 text-muted">2474</small>
-                                                </td>
-                                                <td>
-                                                    <p class="mb-0 text-muted">
-                                                        Dosen
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <p class="mb-0 text-muted">
-                                                        <a href="#" class="primary"
-                                                            style="
+                                            @foreach ($mahasiswas as $item)
+                                                <tr>
+                                                    <td>
+                                                        <div class="avatar avatar-md">
+                                                            <img src="./assets/avatars/face-3.jpg" alt="..."
+                                                                class="avatar-img rounded-circle" />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-muted">
+                                                            <strong>{{ $item->name }}</strong>
+                                                        </p>
+                                                        <small class="mb-0 text-muted">2474</small>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-muted">
+                                                            {{ $item->jabatan }}
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-muted">
+                                                            <a href="#" class="primary"
+                                                                style="
                                                                         background-color: yellow;
                                                                         color: black;
                                                                     ">(958)
-                                                            421-0798</a>
-                                                    </p>
-                                                </td>
-                                                <td class="w-25">
-                                                    <small class="text-muted">
-                                                        Lab
-                                                        Telkom.</small>
-                                                </td>
-                                                <td class="primary">
-                                                    <span class="bg-warning text-white">
-                                                        13/09/2020</span>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-sm dropdown-toggle more-horizontal"
-                                                        type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <span class="text-muted sr-only">Action</span>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Remove</a>
-                                                        <a class="dropdown-item" href="#">Assign</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                                421-0798</a>
+                                                        </p>
+                                                    </td>
+                                                    <td class="w-25">
+                                                        <small class="text-muted">
+                                                            Lab
+                                                            Telkom.</small>
+                                                    </td>
+                                                    <td class="primary">
+                                                        <span class="bg-warning text-white">
+                                                            13/09/2020</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-sm dropdown-toggle more-horizontal"
+                                                            type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <span class="text-muted sr-only">Action</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Edit</a>
+                                                            <a class="dropdown-item" href="#">Remove</a>
+                                                            <a class="dropdown-item" href="#">Assign</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <nav aria-label="Table Paging" class="mb-0 text-muted">

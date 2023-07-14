@@ -5,6 +5,7 @@ use App\Http\Controllers\AreaParkirController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataMahasiswaController;
 use App\Http\Controllers\IndoorMonitoringController;
+use App\Http\Controllers\LabareaController;
 use App\Http\Controllers\OpenBarierController;
 use App\Http\Controllers\PendingUserController;
 use App\Http\Controllers\ProfileController;
@@ -26,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
 Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi.index');
+Route::get('/lab-add', [LabareaController::class, 'create'])->name('absensi.create');
+Route::post('/lab-store', [LabareaController::class, 'store'])->name('absensi.store');
 
 Route::get('/data-mahasiswa', [DataMahasiswaController::class, 'index'])->name('datamahasiswa.index');
 

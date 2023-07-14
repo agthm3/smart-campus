@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataMahasiswa;
+use App\Models\LogAttendance;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class DataMahasiswaController extends Controller
+class LogAttendanceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $mahasiswas =DB::table('users')->where('jabatan', '=' , 'mahasiswa')->get();
-         return view('pages.datamahasiswa.index', compact('mahasiswas'));
+        //
     }
 
     /**
@@ -36,7 +34,7 @@ class DataMahasiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DataMahasiswa $dataMahasiswa)
+    public function show(LogAttendance $logAttendance)
     {
         //
     }
@@ -44,7 +42,7 @@ class DataMahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DataMahasiswa $dataMahasiswa)
+    public function edit(LogAttendance $logAttendance)
     {
         //
     }
@@ -52,7 +50,7 @@ class DataMahasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataMahasiswa $dataMahasiswa)
+    public function update(Request $request, LogAttendance $logAttendance)
     {
         //
     }
@@ -60,7 +58,7 @@ class DataMahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataMahasiswa $dataMahasiswa)
+    public function destroy(LogAttendance $logAttendance)
     {
         //
     }
