@@ -29,6 +29,7 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index')-
 Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi.index');
 Route::get('/lab-add', [LabareaController::class, 'create'])->name('absensi.create');
 Route::post('/lab-store', [LabareaController::class, 'store'])->name('absensi.store');
+Route::delete('/lab-delete/{labarea}', [LabareaController::class, 'destroy'])->name('labarea.destroy');
 
 Route::get('/data-mahasiswa', [DataMahasiswaController::class, 'index'])->name('datamahasiswa.index');
 

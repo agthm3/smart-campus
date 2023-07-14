@@ -32,6 +32,23 @@
                                                     <h3 class="card-title mb-0">
                                                         {{ $item->name }}
                                                     </h3>
+                                                    <h3 class="card-title mb-0">
+                                                        <form action="{{ route('labarea.destroy', $item) }}" method="post">
+                                                            @method('delete')
+                                                            @if ($errors->any())
+                                                                <div class="alert alert-danger">
+                                                                    <ul>
+                                                                        @foreach ($errors->all() as $error)
+                                                                            <li>{{ $error }}</li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                </div>
+                                                            @endif
+                                                            @csrf
+                                                            <button type="submit"
+                                                                class="form-control bg-danger text-white">Hapus</button>
+                                                        </form>
+                                                    </h3>
                                                 </div>
                                                 <div class="col-4 text-right">
                                                     <span class="sparkline inlinebar"></span>

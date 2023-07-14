@@ -70,6 +70,8 @@ class LabareaController extends Controller
      */
     public function destroy(Labarea $labarea)
     {
-        //
+        $labarea->delete();
+
+        return Redirect::back();
     }
 }
