@@ -12,4 +12,8 @@ class Labarea extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function logattendance(){
+        return $this->hasMany(LogAttendance::class);
+    }
 }

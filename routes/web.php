@@ -11,6 +11,7 @@ use App\Http\Controllers\PendingUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RekapAbsensiMahasiswaController;
 use App\Http\Controllers\RekapParkirController;
+use App\Models\RekapAbsensiMahasiswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,7 @@ Route::delete('/lab-delete/{labarea}', [LabareaController::class, 'destroy'])->n
 Route::get('/data-mahasiswa', [DataMahasiswaController::class, 'index'])->name('datamahasiswa.index');
 
 Route::get('/rekap-absensi', [RekapAbsensiMahasiswaController::class, 'index'])-> name('rekapabsensi.index');
+Route::post('/rekap-create', [RekapAbsensiMahasiswaController::class, 'store'])->name('rekapabsensi.store');
 
 Route::get('/open-barier', [OpenBarierController::class, 'index'])->name('openbarier.index');
 

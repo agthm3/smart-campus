@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class LogAttendance extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+        'user_id', 
+        'labarea_id', 
+    ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function labarea(){
+        return $this->belongsTo(Labarea::class);
+    }
 }

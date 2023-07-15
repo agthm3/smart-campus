@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Labarea;
+use App\Models\LogAttendance;
 use App\Models\RekapAbsensiMahasiswa;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class RekapAbsensiMahasiswaController extends Controller
 {
@@ -12,7 +17,9 @@ class RekapAbsensiMahasiswaController extends Controller
      */
     public function index()
     {
-        return view('pages.rekapabsensi.index');
+        $logs = LogAttendance::all();
+
+        return view('pages.rekapabsensi.index', compact('logs'));
     }
 
     /**
@@ -28,7 +35,18 @@ class RekapAbsensiMahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::id();
+        $labarea_id = $request->labarea_id;
+        
+
+        LogAttendance::create([
+            'user_id' => $user_id,
+            'labarea_id' => $labarea_id,
+        ]);
+
+        return Redirect::route('rekapabsensi.index');
+        // @dd($labarea_id);
+        // $jobexperiences = JobExperience::where('user_id', $user_id)->get();
     }
 
     /**
