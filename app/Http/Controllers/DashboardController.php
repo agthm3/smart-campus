@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\LogAttendance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -12,7 +14,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard.index');
+        // $logAbsensi = LogAttendance::all()->last()->take(2);
+        $logAbsensi = LogAttendance::latest()->take(5)->get()->reverse();
+        return view('pages.dashboard.index', compact('logAbsensi'));
     }
 
     /**
