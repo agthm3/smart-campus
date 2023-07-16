@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('nim');
             $table->enum('jabatan', ['mahasiswa', 'dosen','staff'])->default('mahasiswa');
             $table->enum('kendaraan', ['mobil', 'motor'])->default('motor');
-            $table->enum('status', ['confirm', 'pending'])->default('pending');
+            $table->enum('status', ['confirm', 'pending', 'reject'])->default('pending');
         });
     }
 

@@ -44,6 +44,8 @@ Route::get('/rekap-parkir', [RekapParkirController::class, 'index'])->name('reka
 Route::get('/area-parkir', [AreaParkirController::class, 'index'])->name('areaparkir.index');
 
 Route::get('/pending-user', [PendingUserController::class, 'index'])->name('pendinguser.index');
+Route::patch('/pending-user/update/{user}', [PendingUserController::class, 'update_confirm'])->name('pendinguser.confirm');
+Route::patch('/pending-user/reject/{user}', [PendingUserController::class, 'update_reject'])->name('pendinguser.reject');
 
 Route::get('/indoor-monitoring', [IndoorMonitoringController::class, 'index'])->name('indoormonitoring.index');
 Route::get('/dashboard', function () {

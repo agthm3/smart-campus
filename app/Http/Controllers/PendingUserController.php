@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\PendingUser;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PendingUserController extends Controller
 {
@@ -12,7 +14,9 @@ class PendingUserController extends Controller
      */
     public function index()
     {
-        return view('pages.pendinguser.index');
+        $pending_user = User::where('status', '=' , 'pending')->orWhere('status', '=', 'reject')->get();
+
+        return view('pages.pendinguser.index', compact('pending_user'));
     }
 
     /**
@@ -50,9 +54,21 @@ class PendingUserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PendingUser $pendingUser)
+    public function update_confirm(Request $request ,User $user){
+        $user->update([
+            'status' => $request->status,
+        ]);
+
+        return Redirect::route('pendinguser.index');
+    }
+
+    public function update_reject(Request $request, User $user)
     {
-        //
+        $user->update([
+            'status' => $request->status,
+        ]);
+
+        return Redirect::route('pendinguser.index');
     }
 
     /**

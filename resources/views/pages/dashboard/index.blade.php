@@ -248,7 +248,6 @@
                                                 <th>Name</th>
                                                 <th>Lab</th>
                                                 <th>Date</th>
-                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -262,21 +261,7 @@
                                                         {{ $item->labarea->name }}
                                                     </td>
                                                     <td>{{ $item->created_at->format('d M Y') }}</td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-sm dropdown-toggle more-vertical"
-                                                                type="button" id="dr1" data-toggle="dropdown"
-                                                                aria-haspopup="true" aria-expanded="false">
-                                                                <span class="text-muted sr-only">Action</span>
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-right"
-                                                                aria-labelledby="dr1">
-                                                                <a class="dropdown-item" href="#">Edit</a>
-                                                                <a class="dropdown-item" href="#">Remove</a>
-                                                                <a class="dropdown-item" href="#">Assign</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
+
                                                 </tr>
                                             @endforeach
                                         </tbody>
