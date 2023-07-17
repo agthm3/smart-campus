@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('area_parkirs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('max_motor');
+            $table->string('max_car');
             $table->timestamps();
         });
     }

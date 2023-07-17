@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class AreaParkir extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 
+        'max_motor', 
+        'max_car'
+    ];
 }

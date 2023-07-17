@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AreaParkir;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AreaParkirController extends Controller
 {
@@ -12,7 +13,8 @@ class AreaParkirController extends Controller
      */
     public function index()
     {
-        return view('pages.areaparkir.index');
+        $parkingAreas = AreaParkir::all();
+        return view('pages.areaparkir.index', compact('parkingAreas'));
     }
 
     /**
@@ -20,7 +22,7 @@ class AreaParkirController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.areaparkir.create');
     }
 
     /**
@@ -28,7 +30,20 @@ class AreaParkirController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255', 
+            'max_motor' => 'numeric|max:255',
+            'max_car' => 'numeric|max:255'
+        ]);
+
+
+        AreaParkir::create([
+            'name' => $request->name, 
+            'max_motor'=> $request->max_motor, 
+            'max_car' => $request->max_car
+        ]);
+
+        return Redirect::route('areaparkir.index');
     }
 
     /**
@@ -60,6 +75,8 @@ class AreaParkirController extends Controller
      */
     public function destroy(AreaParkir $areaParkir)
     {
-        //
+        $areaParkir->delete();
+
+        return Redirect::back();
     }
 }

@@ -24,9 +24,8 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.areaparkir.create');
     }
-
     /**
      * Store a newly created resource in storage.
      */

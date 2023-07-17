@@ -42,6 +42,9 @@ Route::get('/open-barier', [OpenBarierController::class, 'index'])->name('openba
 Route::get('/rekap-parkir', [RekapParkirController::class, 'index'])->name('rekapparkir.index');
 
 Route::get('/area-parkir', [AreaParkirController::class, 'index'])->name('areaparkir.index');
+Route::get('/area-parkir/create', [AreaParkirController::class, 'create'])->name('areaparkir.create');
+Route::post('/area-parkir/store', [AreaParkirController::class, 'store'])->name('areaparkir.store');
+Route::delete('/area-parkir/delete/{areaParkir}', [AreaParkirController::class, 'destroy'])->name('areaparkir.delete');
 
 Route::get('/pending-user', [PendingUserController::class, 'index'])->name('pendinguser.index');
 Route::patch('/pending-user/update/{user}', [PendingUserController::class, 'update_confirm'])->name('pendinguser.confirm');
