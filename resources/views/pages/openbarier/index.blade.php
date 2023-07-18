@@ -11,78 +11,37 @@
                                 Selamat Datang!
                             </h2>
                         </div>
+
                     </div>
                     <!-- widgets -->
                     <div class="row my-4">
-                        <div class="col-md-4">
-                            <a href="">
-                                <div class="card shadow mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <small class="text-muted mb-1">Parkiran</small>
-                                                <h3 class="card-title mb-0">
-                                                    Parkir Elektro
-                                                </h3>
+                        @foreach ($parkingAreas as $item)
+                            <div class="col-md-4">
+                                <a href="">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <small class="text-muted mb-1">Parkiran</small>
+                                                    <h3 class="card-title mb-0">
+                                                        {{ $item->name }}
+                                                    </h3>
+                                                </div>
+                                                <div class="col-4 text-right">
+                                                    <span class="sparkline inlinebar"></span>
+                                                </div>
                                             </div>
-                                            <div class="col-4 text-right">
-                                                <span class="sparkline inlinebar"></span>
-                                            </div>
+                                            <!-- /. row -->
                                         </div>
-                                        <!-- /. row -->
+                                        <!-- /. card-body -->
+
                                     </div>
-                                    <!-- /. card-body -->
-                                </div>
-                            </a>
-                            <!-- /. card -->
-                        </div>
-                        <!-- /. col -->
-                        <div class="col-md-4">
-                            <a href="">
-                                <div class="card shadow mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <small class="text-muted mb-1">Parkir</small>
-                                                <h3 class="card-title mb-0">
-                                                    Parkir CSA
-                                                </h3>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="sparkline inlinebar"></span>
-                                            </div>
-                                        </div>
-                                        <!-- /. row -->
-                                    </div>
-                                    <!-- /. card-body -->
-                                </div>
-                            </a>
-                            <!-- /. card -->
-                        </div>
-                        <!-- /. col -->
-                        <div class="col-md-4">
-                            <a href="">
-                                <div class="card shadow mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <small class="text-muted mb-1">Parkir</small>
-                                                <h3 class="card-title mb-0">
-                                                    Parkir COT
-                                                </h3>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="sparkline inlinebar"></span>
-                                            </div>
-                                        </div>
-                                        <!-- /. row -->
-                                    </div>
-                                    <!-- /. card-body -->
-                                </div>
-                            </a>
-                            <!-- /. card -->
-                        </div>
-                        <!-- /. col -->
+
+                                </a>
+
+
+                            </div>
+                        @endforeach
                     </div>
                     <!-- end section -->
                 </div>

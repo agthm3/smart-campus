@@ -4,8 +4,8 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h2 class="page-title">Tambah Area Parkir 🚗🏍️</h2>
-                    <p class="text-muted">Tambah area parkir agar dapat dipilih oleh user.</p>
+                    <h2 class="page-title">Tambah Area Parkir</h2>
+                    <p class="text-muted">Tambah area Parkir agar dapat dipilih oleh user.</p>
                     <div class="card shadow mb-4">
                         <div class="card-header">
                             <strong class="card-title">Area Parkir Baru</strong>
@@ -13,19 +13,11 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form action="{{ route('areaparkir.store') }}" method="post">
+                                    <form action="{{ route('lab.store') }}" method="post">
                                         @csrf
                                         <div class="form-group mb-3">
-                                            <label for="simpleinput">Nama Parkiran</label>
+                                            <Parkirel for="simpleinput">Nama Parkir</Parkirel>
                                             <input type="text" name="name" id="simpleinput" class="form-control">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="simpleinput">Kapasitas Motor</label>
-                                            <input type="number" name="max_motor" id="simpleinput" class="form-control">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="simpleinput">Kapasitas Mobil</label>
-                                            <input type="number" name="max_car" id="simpleinput" class="form-control">
                                         </div>
                                         <button type="submit" class="form-control bg-primary text-white">Simpan</button>
                                     </form>
@@ -39,13 +31,13 @@
                 </div> <!-- .col-12 -->
             </div> <!-- .row -->
         </div> <!-- .container-fluid -->
-        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
-            aria-hidden="true">
+        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog"
+            aria-Parkirelledby="defaultModalParkirel" aria-hidden="true">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <h5 class="modal-title" id="defaultModalParkirel">Notifications</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-Parkirel="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -108,13 +100,13 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
-            aria-hidden="true">
+        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog"
+            aria-Parkirelledby="defaultModalParkirel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <h5 class="modal-title" id="defaultModalParkirel">Shortcuts</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-Parkirel="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>

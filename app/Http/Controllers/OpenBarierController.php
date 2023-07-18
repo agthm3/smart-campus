@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AreaParkir;
 use App\Models\OpenBarier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class OpenBarierController extends Controller
 {
@@ -12,7 +14,8 @@ class OpenBarierController extends Controller
      */
     public function index()
     {
-        return view('pages.openbarier.index');
+        $parkingAreas = AreaParkir::all();
+        return view('pages.openbarier.index', compact('parkingAreas'));
     }
 
     /**
@@ -20,7 +23,7 @@ class OpenBarierController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.openbarier.create');
     }
 
     /**
@@ -60,6 +63,8 @@ class OpenBarierController extends Controller
      */
     public function destroy(OpenBarier $openBarier)
     {
-        //
+        $openBarier->delete();
+
+        return Redirect::back();
     }
 }

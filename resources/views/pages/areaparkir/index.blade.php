@@ -46,7 +46,7 @@
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr role="row">
-                                                <th>No</th>
+                                                <th>ID</th>
                                                 <th>Area Parkir</th>
                                                 <th>Max Mobil</th>
                                                 <th>Max Motor</th>
