@@ -38,6 +38,7 @@ Route::get('/rekap-absensi', [RekapAbsensiMahasiswaController::class, 'index'])-
 Route::post('/rekap-create', [RekapAbsensiMahasiswaController::class, 'store'])->name('rekapabsensi.store');
 
 Route::get('/open-barier', [OpenBarierController::class, 'index'])->name('openbarier.index');
+Route::post('/open-barier/store', [OpenBarierController::class, 'store'])->name('openbarier.store');
 
 Route::get('/rekap-parkir', [RekapParkirController::class, 'index'])->name('rekapparkir.index');
 

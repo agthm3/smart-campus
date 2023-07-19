@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function logattendance(){
         return $this->hasMany(LogAttendance::class);
     }
+
+    public function logparking(){
+        return $this->hasMany(RekapParkir::class);
+    }
 }

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('rekap_parkirs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('areaparkir_id')->constrained('areaparkirs')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

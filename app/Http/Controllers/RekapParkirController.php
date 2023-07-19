@@ -12,7 +12,8 @@ class RekapParkirController extends Controller
      */
     public function index()
     {
-        return view('pages.rekapparkir.index');
+        $logParkings = RekapParkir::all();
+        return view('pages.rekapparkir.index', compact('logParkings'));
     }
 
     /**

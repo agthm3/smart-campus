@@ -65,8 +65,9 @@
                                                     <td>
                                                         <button class="btn btn-sm more-horizontal" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="false"><i class="fas fa-caret-square-down"></i>
-                                                            <span class="text-muted sr-only">Action</span>
+                                                            aria-expanded="false">
+                                                            <span class="text-muted sr-only">Action</span><i
+                                                                class="fas fa-caret-square-down"></i>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <form action="{{ route('areaparkir.delete', $item) }}"

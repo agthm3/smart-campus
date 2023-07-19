@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AreaParkir;
+use App\Models\Areaparkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-class AreaParkirController extends Controller
+class AreaparkirController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $parkingAreas = AreaParkir::all();
+        $parkingAreas = Areaparkir::all();
         return view('pages.areaparkir.index', compact('parkingAreas'));
     }
 
@@ -37,7 +37,7 @@ class AreaParkirController extends Controller
         ]);
 
 
-        AreaParkir::create([
+        Areaparkir::create([
             'name' => $request->name, 
             'max_motor'=> $request->max_motor, 
             'max_car' => $request->max_car
@@ -49,7 +49,7 @@ class AreaParkirController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AreaParkir $areaParkir)
+    public function show(Areaparkir $areaparkir)
     {
         //
     }
@@ -57,7 +57,7 @@ class AreaParkirController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AreaParkir $areaParkir)
+    public function edit(Areaparkir $areaparkir)
     {
         //
     }
@@ -65,7 +65,7 @@ class AreaParkirController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AreaParkir $areaParkir)
+    public function update(Request $request, Areaparkir $areaparkir)
     {
         //
     }
@@ -73,9 +73,9 @@ class AreaParkirController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AreaParkir $areaParkir)
+    public function destroy(Areaparkir $areaparkir)
     {
-        $areaParkir->delete();
+        $areaparkir->delete();
 
         return Redirect::back();
     }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\AreaParkir;
 use App\Models\OpenBarier;
+use App\Models\RekapParkir;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class OpenBarierController extends Controller
@@ -31,7 +33,17 @@ class OpenBarierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id =Auth::id();
+        $request->validate([
+            'areaparkir_id' => 'required|max:255|numeric'
+        ]);
+
+        RekapParkir::create([
+            'user_id' => $user_id, 
+            'areaparkir_id' => $request->areaparkir_id
+        ]);
+
+        return Redirect::back();
     }
 
     /**

@@ -17,28 +17,46 @@
                     <div class="row my-4">
                         @foreach ($parkingAreas as $item)
                             <div class="col-md-4">
-                                <a href="">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-body">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted mb-1">Parkiran</small>
-                                                    <h3 class="card-title mb-0">
-                                                        {{ $item->name }}
-                                                    </h3>
+                                <div class="card shadow mb-4" style="cursor:pointer"
+                                    onclick="document.getElementById('form-{{ $item->id }}').submit()">
+                                    <form action="{{ route('openbarier.store', $item) }}" method="post"
+                                        id="form-{{ $item->id }}">
+                                        @csrf
+                                        <div class="card shadow mb-4">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <small class="text-muted mb-1">Parkiran</small>
+                                                        <h3 class="card-title mb-0">
+                                                            {{ $item->name }}
+                                                        </h3>
+                                                        <hr>
+                                                        <input type="hidden" name="areaparkir_id"
+                                                            value="{{ $item->id }}" id="simpleinput"
+                                                            class="form-control">
+                                                        <small class="text-danger unstyled">Sisa Parkiran Mobil 🚗:
+                                                            {{ $item->max_car }}
+                                                        </small>
+                                                        <hr>
+                                                        <small class="text-danger text-decoration-none">Sisa Parkiran Motor
+                                                            🏍️:
+                                                            {{ $item->max_motor }}
+                                                        </small>
+                                                    </div>
+
+                                                    <div class="col-4 text-right">
+                                                        <span class="sparkline inlinebar"></span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-4 text-right">
-                                                    <span class="sparkline inlinebar"></span>
-                                                </div>
+                                                <!-- /. row -->
                                             </div>
-                                            <!-- /. row -->
+                                            <!-- /. card-body -->
+
+
                                         </div>
-                                        <!-- /. card-body -->
 
-                                    </div>
-
-                                </a>
-
+                                    </form>
+                                </div>
 
                             </div>
                         @endforeach
