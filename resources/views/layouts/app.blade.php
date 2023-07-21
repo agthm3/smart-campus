@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}">>
 
 <!-- Date Range Picker CSS -->
-<link rel="stylesheet" href="asset('css/daterangepicker.css')" />
+{{-- <link rel="stylesheet" href="asset('css/daterangepicker.css')" /> --}}
 <!-- App CSS -->
 <link rel="stylesheet" href="{{ asset('css/app-light.css') }}" id="lightTheme" />
 <link rel="stylesheet" href="{{ asset('css/app-dark.css') }}" id="darkTheme" disabled />
@@ -78,7 +78,7 @@
     <script src="{{ asset('dashboard/js/moment.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/simplebar.min.js') }}"></script>
-    <script src="{{ asset('dashboard/js/daterangepicker.js') }}"></script>
+    {{-- <script src="{{ asset('dashboard/js/daterangepicker.js') }}"></script> --}}
     <script src="{{ asset('dashboard/js/jquery.stickOnScroll.js') }}"></script>
     <script src="{{ asset('dashboard/js/tinycolor-min.js') }}"></script>
     <script src="{{ asset('dashboard/js/config.js') }}"></script>
@@ -105,7 +105,7 @@
     <script src="{{ asset('dashboard/js/dropzone.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/uppy.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/quill.min.js') }}"></script>
-    <script>
+    {{-- <script>
         $(".select2").select2({
             theme: "bootstrap4",
         });
@@ -321,7 +321,7 @@
         }
         gtag("js", new Date());
         gtag("config", "UA-56159088-1");
-    </script>
+    </script> --}}
 </body>
 
 </html>
