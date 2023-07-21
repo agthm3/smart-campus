@@ -80,7 +80,7 @@
     <script src="{{ asset('dashboard/js/daterangepicker.js') }}"></script>
     <script src="{{ asset('dashboard/js/jquery.stickOnScroll.js') }}"></script>
     <script src="{{ asset('dashboard/js/tinycolor-min.js') }}"></script>
-    <script src="{{ asset('dashboard/js/config.j') }}"></script>
+    <script src="{{ asset('dashboard/js/config.js') }}"></script>
     <script src="{{ asset('dashboard/js/d3.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/topojson.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/datamaps.all.min.js') }}"></script>
