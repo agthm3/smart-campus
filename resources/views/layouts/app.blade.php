@@ -9,7 +9,7 @@
 <link rel="icon" href="{{ asset('favicon.ico') }}" />
 
 <script src="https://kit.fontawesome.com/795e24dc42.js" crossorigin="anonymous"></script>
-<title>besar Dashboard - A Bootstrap Dashboard terganti</title>
+<title>SmartCampus Universitas Hasanuddin</title>
 <!-- Simple bar CSS -->
 <link rel="stylesheet" href="{{ asset('css') }}">
 <!-- Fonts CSS -->
