@@ -18,7 +18,7 @@
     rel="stylesheet" />
 <!-- Icons CSS -->
 {{-- @include('includes.resources.css') --}}
-<link rel="stylesheet" href="{{ asset('css/feather.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('css/feather.css') }}"> --}}
 <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
 <link rel="stylesheet" href="{{ asset('css/uppy.min.css') }}">
