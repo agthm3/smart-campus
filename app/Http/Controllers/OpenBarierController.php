@@ -8,6 +8,8 @@ use App\Models\RekapParkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\User;
+
 
 class OpenBarierController extends Controller
 {
@@ -17,6 +19,8 @@ class OpenBarierController extends Controller
     public function index()
     {
         $parkingAreas = AreaParkir::all();
+        
+   
         return view('pages.openbarier.index', compact('parkingAreas'));
     }
 
@@ -39,6 +43,7 @@ class OpenBarierController extends Controller
         ]);
 
         RekapParkir::create([
+            'parking_status' => 'is_in',
             'user_id' => $user_id, 
             'areaparkir_id' => $request->areaparkir_id
         ]);

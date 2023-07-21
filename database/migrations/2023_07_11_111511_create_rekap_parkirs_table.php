@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('areaparkir_id')->constrained('areaparkirs')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->enum('parking_status', ['is_in', 'is_out'])->default('is_in');
             $table->timestamps();
         });
     }
