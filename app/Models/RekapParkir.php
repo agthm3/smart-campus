@@ -10,7 +10,8 @@ class RekapParkir extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'areaparkir_id'
+        'areaparkir_id',
+        'parking_status'
     ];
 
     public function user(){

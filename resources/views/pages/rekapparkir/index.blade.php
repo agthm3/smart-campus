@@ -33,6 +33,7 @@
                                                 <th>Kendaraan</th>
                                                 <th>Waktu</th>
                                                 <th>Parkiran</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -48,6 +49,9 @@
                                                     <td>{{ $item->created_at }}</td>
                                                     <td>
                                                         {{ $item->areaparkir->name }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->parking_status }}
                                                     </td>
                                                     <td>
                                                         <button class="btn btn-sm dropdown-toggle more-horizontal"
