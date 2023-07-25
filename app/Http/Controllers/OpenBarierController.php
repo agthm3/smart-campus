@@ -18,17 +18,7 @@ class OpenBarierController extends Controller
      */
     // public function index()
     // {
-   
-    //     $parkingstatus = RekapParkir::where('parking_status', '=', 'is_in')->latest()->first();
-    //     if($parkingstatus){
-    //        $parkingMasuk = $parkingstatus;
-    //        $parkingAreas = null;
-    //     }else{
-    //         $parkingAreas = AreaParkir::all();
-    //         $parkingMasuk = null;
-    //     }
-    //     return view('pages.openbarier.index', compact('parkingAreas', 'parkingMasuk' ));
-    // }
+
     public function index()
     {
         $user_id = Auth::id();
@@ -60,12 +50,22 @@ class OpenBarierController extends Controller
 
     public function keluar(Request $request)
     {
-        // dd($request);
-        echo "Fungsi Keluar Terpanggil";
-        $user_id =Auth::id();
+        $user_id = Auth::id();
+        $user_vehicle = User::find($user_id)->kendaraan;
+        
         $request->validate([
             'areaparkir_id' => 'required|max:255|numeric'
         ]);
+
+        $areaparkir = AreaParkir::find($request->areaparkir_id);
+
+        if ($user_vehicle == 'mobil') {
+            $areaparkir->max_car += 1;
+            $areaparkir->save();
+        } elseif ($user_vehicle == 'motor') {
+            $areaparkir->max_motor += 1;
+            $areaparkir->save();
+        }
 
         RekapParkir::create([
             'parking_status' =>'is_out',
@@ -75,6 +75,7 @@ class OpenBarierController extends Controller
 
         return Redirect::route('openbarier.index');
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -83,15 +84,35 @@ class OpenBarierController extends Controller
         return view('pages.openbarier.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function masuk(Request $request)
+
+        public function masuk(Request $request)
     {
-        $user_id =Auth::id();
+        $user_id = Auth::id();
+        $user_vehicle = User::find($user_id)->kendaraan;
+        
         $request->validate([
             'areaparkir_id' => 'required|max:255|numeric'
         ]);
+
+        $areaparkir = AreaParkir::find($request->areaparkir_id);
+
+        if ($user_vehicle == 'mobil') {
+            if ($areaparkir->max_car > 0) {
+                $areaparkir->max_car -= 1;
+                $areaparkir->save();
+            } else {
+                // Tampilkan pesan error bahwa tidak ada tempat parkir mobil yang tersedia
+                return back()->withErrors(['Tidak ada tempat parkir mobil yang tersedia']);
+            }
+        } elseif ($user_vehicle == 'motor') {
+            if ($areaparkir->max_motor > 0) {
+                $areaparkir->max_motor -= 1;
+                $areaparkir->save();
+            } else {
+                // Tampilkan pesan error bahwa tidak ada tempat parkir motor yang tersedia
+                return back()->withErrors(['Tidak ada tempat parkir motor yang tersedia']);
+            }
+        }
 
         RekapParkir::create([
             'parking_status' => 'is_in',
@@ -101,6 +122,7 @@ class OpenBarierController extends Controller
 
         return Redirect::back();
     }
+
 
     /**
      * Display the specified resource.
