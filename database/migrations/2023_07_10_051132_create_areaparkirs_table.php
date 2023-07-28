@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('max_motor');
             $table->string('max_car');
+            $table->string('mac');
             $table->timestamps();
         });
     }

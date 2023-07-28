@@ -27,6 +27,10 @@
                                             <label for="simpleinput">Kapasitas Mobil</label>
                                             <input type="number" name="max_car" id="simpleinput" class="form-control">
                                         </div>
+                                        <div class="form-group mb-3">
+                                            <label for="simpleinput">Mac</label>
+                                            <input type="text" name="mac" id="simpleinput" class="form-control">
+                                        </div>
                                         <button type="submit" class="form-control bg-primary text-white">Simpan</button>
                                     </form>
 

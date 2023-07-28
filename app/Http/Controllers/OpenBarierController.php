@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\User;
-
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 
 class OpenBarierController extends Controller
 {
@@ -50,15 +51,17 @@ class OpenBarierController extends Controller
 
     public function keluar(Request $request)
     {
+ 
         $user_id = Auth::id();
         $user_vehicle = User::find($user_id)->kendaraan;
-        
+        $areaparkir_id = $request->areaparkir_id;
+    // dd($areaparkir_id);
         $request->validate([
             'areaparkir_id' => 'required|max:255|numeric'
         ]);
 
-        $areaparkir = AreaParkir::find($request->areaparkir_id);
-
+        $areaparkir = AreaParkir::find($areaparkir_id);
+   
         if ($user_vehicle == 'mobil') {
             $areaparkir->max_car += 1;
             $areaparkir->save();
@@ -76,6 +79,7 @@ class OpenBarierController extends Controller
         return Redirect::route('openbarier.index');
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -85,8 +89,10 @@ class OpenBarierController extends Controller
     }
 
 
-        public function masuk(Request $request)
+    public function masuk(Request $request)
     {
+
+        // dd(route('hit'));
         $user_id = Auth::id();
         $user_vehicle = User::find($user_id)->kendaraan;
         
@@ -119,8 +125,8 @@ class OpenBarierController extends Controller
             'user_id' => $user_id, 
             'areaparkir_id' => $request->areaparkir_id
         ]);
-
-        return Redirect::back();
+        
+        return Redirect::route('openbarier.index');
     }
 
 

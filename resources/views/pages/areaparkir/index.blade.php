@@ -50,6 +50,7 @@
                                                 <th>Area Parkir</th>
                                                 <th>Max Mobil</th>
                                                 <th>Max Motor</th>
+                                                <th>Mac Address</th>
 
                                                 <th>Action</th>
                                             </tr>
@@ -61,6 +62,7 @@
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->max_car }}</td>
                                                     <td>{{ $item->max_motor }}</td>
+                                                    <td>{{ $item->mac }}</td>
 
                                                     <td>
                                                         <button class="btn btn-sm more-horizontal" type="button"

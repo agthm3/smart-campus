@@ -33,14 +33,16 @@ class AreaparkirController extends Controller
         $request->validate([
             'name' => 'required|max:255', 
             'max_motor' => 'numeric|max:255',
-            'max_car' => 'numeric|max:255'
+            'max_car' => 'numeric|max:255',
+            'mac' => 'max:255|required'
         ]);
 
 
         Areaparkir::create([
             'name' => $request->name, 
             'max_motor'=> $request->max_motor, 
-            'max_car' => $request->max_car
+            'max_car' => $request->max_car,
+            'mac' => $request->mac
         ]);
 
         return Redirect::route('areaparkir.index');

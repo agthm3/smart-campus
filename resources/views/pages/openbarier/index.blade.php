@@ -37,9 +37,11 @@
                                                     <div class="col-4 text-right">
 
                                                         <input type="hidden" name="parking_status" value="is_out">
+                                                        <input type="hidden" name="mac"
+                                                            value="{{ $parkingMasuk->areaparkir->mac }}">
 
                                                         <input type="hidden" name="areaparkir_id"
-                                                            value="{{ $parkingMasuk->id }}">
+                                                            value="{{ $parkingMasuk->areaparkir_id }}">
                                                         <button type="submit"
                                                             class="form-control bg-info text-white">Keluar</button>
 

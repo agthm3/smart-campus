@@ -11,7 +11,8 @@ class Areaparkir extends Model
         protected $fillable = [
         'name', 
         'max_motor', 
-        'max_car'
+        'max_car',
+        'mac'
     ];
 
     public function logparking(){
