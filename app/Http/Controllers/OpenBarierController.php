@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AreaParkir;
+use App\Models\Command;
 use App\Models\OpenBarier;
 use App\Models\RekapParkir;
 use Illuminate\Http\Request;
@@ -91,7 +92,7 @@ class OpenBarierController extends Controller
 
     public function masuk(Request $request)
     {
-
+       
         // dd(route('hit'));
         $user_id = Auth::id();
         $user_vehicle = User::find($user_id)->kendaraan;
@@ -101,7 +102,7 @@ class OpenBarierController extends Controller
         ]);
 
         $areaparkir = AreaParkir::find($request->areaparkir_id);
-
+        // dd($areaparkir->mac);
         if ($user_vehicle == 'mobil') {
             if ($areaparkir->max_car > 0) {
                 $areaparkir->max_car -= 1;
@@ -126,6 +127,10 @@ class OpenBarierController extends Controller
             'areaparkir_id' => $request->areaparkir_id
         ]);
         
+        Command::create([
+            'mac' => $areaparkir->mac,
+            'status' => true
+        ]);
         return Redirect::route('openbarier.index');
     }
 
