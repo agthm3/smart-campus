@@ -32,11 +32,13 @@
                          <a class="nav-link pl-3" href="{{ route('absensi.index') }}"><span
                                  class="ml-1 item-text">Absensi</span></a>
                      </li>
-                     <li class="nav-item">
-                         <a class="nav-link pl-3" href="{{ route('datamahasiswa.index') }}"><span
-                                 class="ml-1 item-text">Data
-                                 Mahasiswa</span></a>
-                     </li>
+                     @if (Auth::user()->auth == 'admin')
+                         <li class="nav-item">
+                             <a class="nav-link pl-3" href="{{ route('datamahasiswa.index') }}"><span
+                                     class="ml-1 item-text">Data
+                                     Mahasiswa</span></a>
+                         </li>
+                     @endif
                      <li class="nav-item">
                          <a class="nav-link pl-3" href="{{ route('rekapabsensi.index') }}"><span
                                  class="ml-1 item-text">Rekap
@@ -61,19 +63,25 @@
                                  class="ml-1 item-text">Rekap
                                  Parkir</span></a>
                      </li>
-                     <li class="nav-item">
-                         <a class="nav-link pl-3" href="{{ route('areaparkir.index') }}"><span
-                                 class="ml-1 item-text">Area
-                                 Parkir</span></a>
-                     </li>
+                     @if (Auth::user()->auth == 'admin')
+                         <li class="nav-item">
+                             <a class="nav-link pl-3" href="{{ route('areaparkir.index') }}"><span
+                                     class="ml-1 item-text">Area
+                                     Parkir</span></a>
+                         </li>
+                     @endif
+
                  </ul>
              </li>
-             <li class="nav-item dropdown">
-                 <a href="{{ route('pendinguser.index') }}" class="nav-link">
-                     <i class="fa fa-solid fa-bars"></i>
-                     <span class="ml-3 item-text">Pending User</span>
-                 </a>
-             </li>
+             @if (Auth::user()->auth == 'admin')
+                 <li class="nav-item dropdown">
+                     <a href="{{ route('pendinguser.index') }}" class="nav-link">
+                         <i class="fa fa-solid fa-bars"></i>
+                         <span class="ml-3 item-text">Pending User</span>
+                     </a>
+                 </li>
+             @endif
+
              <li class="nav-item dropdown">
                  <a href="{{ route('indoormonitoring.index') }}" class="nav-link">
                      <i class="fa fa-solid fa-bars"></i>
@@ -82,26 +90,6 @@
              </li>
          </ul>
 
-         <p class="text-muted nav-heading mt-4 mb-1">
-             <span>Pengaturan</span>
-         </p>
-         <ul class="navbar-nav flex-fill w-100 mb-2">
-             <li class="nav-item dropdown">
-                 <a href="#auth" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                     <i class="fe fe-shield fe-16"></i>
-                     <span class="ml-3 item-text">Autentikasi</span>
-                 </a>
-                 <ul class="collapse list-unstyled pl-4 w-100" id="auth">
-                     <a class="nav-link pl-3" href="./auth-login.html"><span class="ml-1">Login 1</span></a>
-                     <a class="nav-link pl-3" href="./auth-login-half.html"><span class="ml-1">Login
-                             2</span></a>
-                     <a class="nav-link pl-3" href="./auth-register.html"><span class="ml-1">Register</span></a>
-                     <a class="nav-link pl-3" href="./auth-resetpw.html"><span class="ml-1">Reset
-                             Password</span></a>
-                     <a class="nav-link pl-3" href="./auth-confirm.html"><span class="ml-1">Confirm
-                             Password</span></a>
-                 </ul>
-             </li>
-         </ul>
+
      </nav>
  </aside>

@@ -12,12 +12,16 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="row align-items-center mb-2">
-                        <div class="col-lg-2 ">
-                            <a href="{{ route('lab.create') }}" class="form-control bg-primary text-white text-bold">Tambah
-                                Ruangan +</a>
+                    @if (Auth::user()->auth == 'admin')
+                        <div class="row align-items-center mb-2">
+                            <div class="col-lg-2 ">
+                                <a href="{{ route('lab.create') }}"
+                                    class="form-control bg-primary text-white text-bold">Tambah
+                                    Ruangan +</a>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+
                     <!-- widgets -->
                     <div class="row my-4">
                         @foreach ($labAreas as $item)
@@ -47,22 +51,26 @@
                                         </div>
 
                                     </form>
-                                    <h3 class="card-title mb-0">
-                                        <form action="{{ route('labarea.destroy', $item) }}" method="post">
-                                            @method('delete')
-                                            @if ($errors->any())
-                                                <div class="alert alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                            @csrf
-                                            <button type="submit" class="form-control bg-danger text-white">Hapus</button>
-                                        </form>
-                                    </h3>
+                                    @if (Auth::user()->auth == 'admin')
+                                        <h3 class="card-title mb-0">
+                                            <form action="{{ route('labarea.destroy', $item) }}" method="post">
+                                                @method('delete')
+                                                @if ($errors->any())
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach ($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
+                                                @csrf
+                                                <button type="submit"
+                                                    class="form-control bg-danger text-white">Hapus</button>
+                                            </form>
+                                        </h3>
+                                    @endif
+
                                     <!-- /. card-body -->
                                 </div>
                                 <!-- /. card -->

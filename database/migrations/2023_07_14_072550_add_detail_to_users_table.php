@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('nim');
-            $table->enum('jabatan', ['mahasiswa', 'dosen','staff'])->default('mahasiswa');
+            $table->enum('jabatan', ['mahasiswa', 'dosen','staff', 'admin'])->default('mahasiswa');
             $table->enum('kendaraan', ['mobil', 'motor'])->default('motor');
             $table->enum('status', ['confirm', 'pending', 'reject'])->default('pending');
+            $table->enum('auth', ['admin', 'member'])->default('member');
         });
     }
 

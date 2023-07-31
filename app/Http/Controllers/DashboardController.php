@@ -21,6 +21,14 @@ class DashboardController extends Controller
         return view('pages.dashboard.index', compact('logAbsensi', 'logParking'));
     }
 
+    public function notconfirm(){
+        return view('pages.dashboard.notconfirm');
+    }
+
+    public function noaccess(){
+        return view('pages.dashboard.noaccess');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
