@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
 use App\Models\LogAttendance;
+use App\Models\RekapParkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,8 @@ class DashboardController extends Controller
     {
         // $logAbsensi = LogAttendance::all()->last()->take(2);
         $logAbsensi = LogAttendance::latest()->take(5)->get()->reverse();
-        return view('pages.dashboard.index', compact('logAbsensi'));
+        $logParking = RekapParkir::latest()->take(5)->get()->reverse();
+        return view('pages.dashboard.index', compact('logAbsensi', 'logParking'));
     }
 
     /**
