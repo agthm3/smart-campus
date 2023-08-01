@@ -31,11 +31,13 @@ Route::middleware('auth')->group(function(){
         Route::get('/open-barier', [OpenBarierController::class, 'index'])->name('openbarier.index');
         Route::post('/open-barier/store', [OpenBarierController::class, 'masuk'])->name('openbarier.store');
         Route::post('/open-barier/out', [OpenBarierController::class, 'keluar'])->name('openbarier.out');
-        Route::get('/rekap-absensi', [RekapAbsensiMahasiswaController::class, 'index'])-> name('rekapabsensi.index');
-        Route::get('/rekap-parkir', [RekapParkirController::class, 'index'])->name('rekapparkir.index');
+
+
         Route::post('/rekap-create', [RekapAbsensiMahasiswaController::class, 'store'])->name('rekapabsensi.store');
             //Middleware admin
             Route::middleware('admin')->group(function(){
+                Route::get('/rekap-parkir', [RekapParkirController::class, 'index'])->name('rekapparkir.index');
+                Route::get('/rekap-absensi', [RekapAbsensiMahasiswaController::class, 'index'])-> name('rekapabsensi.index');
                 Route::get('/data-mahasiswa', [DataMahasiswaController::class, 'index'])->name('datamahasiswa.index');
                 Route::get('/area-parkir', [AreaParkirController::class, 'index'])->name('areaparkir.index');
                 Route::get('/area-parkir/create', [AreaParkirController::class, 'create'])->name('areaparkir.create');

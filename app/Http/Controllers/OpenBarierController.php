@@ -131,7 +131,7 @@ class OpenBarierController extends Controller
             'mac' => $areaparkir->mac,
             'status' => true
         ]);
-        return Redirect::route('openbarier.index');
+        return Redirect::back();
     }
 
 

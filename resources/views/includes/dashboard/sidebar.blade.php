@@ -39,11 +39,14 @@
                                      Mahasiswa</span></a>
                          </li>
                      @endif
-                     <li class="nav-item">
-                         <a class="nav-link pl-3" href="{{ route('rekapabsensi.index') }}"><span
-                                 class="ml-1 item-text">Rekap
-                                 Absensi</span></a>
-                     </li>
+                     @if (Auth::user()->auth == 'admin')
+                         <li class="nav-item">
+                             <a class="nav-link pl-3" href="{{ route('rekapabsensi.index') }}"><span
+                                     class="ml-1 item-text">Rekap
+                                     Absensi</span></a>
+                         </li>
+                     @endif
+
                  </ul>
              </li>
              <li class="nav-item dropdown">
@@ -58,11 +61,14 @@
                                  class="ml-1 item-text">Open
                                  Barier</span></a>
                      </li>
-                     <li class="nav-item">
-                         <a class="nav-link pl-3" href="{{ route('rekapparkir.index') }}"><span
-                                 class="ml-1 item-text">Rekap
-                                 Parkir</span></a>
-                     </li>
+                     @if (Auth::user()->auth == 'admin')
+                         <li class="nav-item">
+                             <a class="nav-link pl-3" href="{{ route('rekapparkir.index') }}"><span
+                                     class="ml-1 item-text">Rekap
+                                     Parkir</span></a>
+                         </li>
+                     @endif
+
                      @if (Auth::user()->auth == 'admin')
                          <li class="nav-item">
                              <a class="nav-link pl-3" href="{{ route('areaparkir.index') }}"><span

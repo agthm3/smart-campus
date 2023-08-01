@@ -44,7 +44,7 @@ class RekapAbsensiMahasiswaController extends Controller
             'labarea_id' => $labarea_id,
         ]);
 
-        return Redirect::route('rekapabsensi.index');
+        return Redirect::back();
         // @dd($labarea_id);
         // $jobexperiences = JobExperience::where('user_id', $user_id)->get();
     }
