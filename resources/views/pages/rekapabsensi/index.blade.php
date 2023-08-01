@@ -36,6 +36,15 @@
                                                         </option>
                                                     </select>
                                                 </div>
+
+                                                <div class="dropdown float-right">
+                                                    <a href="">
+                                                        <button id="btnPrint" class="btn btn-primary float-right ml-3"
+                                                            type="button">
+                                                            Print Rekapitulasi
+                                                        </button></a>
+                                                </div>
+
                                                 <div class="form-group col-auto">
                                                     <label for="search" class="sr-only">Search</label>
                                                     <input type="text" class="form-control" id="search1" value=""
@@ -294,4 +303,11 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const btnPrint = document.getElementById('btnPrint');
+        btnPrint.addEventListener('click', function() {
+            window.print();
+        });
+    </script>
 @endsection

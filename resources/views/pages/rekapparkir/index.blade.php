@@ -18,7 +18,7 @@
                                 <div class="col ml-auto mt-3">
                                     <div class="dropdown float-right">
                                         <a href="">
-                                            <button class="btn btn-primary float-right ml-3" type="button">
+                                            <button id="btnPrint" class="btn btn-primary float-right ml-3" type="button">
                                                 Print Rekapitulasi
                                             </button></a>
                                     </div>
@@ -231,4 +231,10 @@
             </div>
         </div>
     </main>
+    <script>
+        const btnPrint = document.getElementById('btnPrint');
+        btnPrint.addEventListener('click', function() {
+            window.print();
+        });
+    </script>
 @endsection
