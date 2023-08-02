@@ -19,6 +19,6 @@ class RekapParkir extends Model
     }
 
     public function areaparkir(){
-        return $this->belongsTo(AreaParkir::class);
+        return $this->belongsTo(Areaparkir::class);
     }
 }
