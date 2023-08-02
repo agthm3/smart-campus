@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AreaParkir;
+use App\Models\Areaparkir;
 use App\Models\Command;
 use App\Models\OpenBarier;
 use App\Models\RekapParkir;
@@ -43,7 +43,7 @@ class OpenBarierController extends Controller
             $parkingAreas = null;
         } else {
             // Jika tidak, maka user sudah keluar dari parkir
-            $parkingAreas = AreaParkir::all();
+            $parkingAreas = Areaparkir::all();
             $parkingMasuk = null;
         }
 
@@ -61,7 +61,7 @@ class OpenBarierController extends Controller
             'areaparkir_id' => 'required|max:255|numeric'
         ]);
 
-        $areaparkir = AreaParkir::find($areaparkir_id);
+        $areaparkir = Areaparkir::find($areaparkir_id);
    
         if ($user_vehicle == 'mobil') {
             $areaparkir->max_car += 1;
@@ -101,7 +101,7 @@ class OpenBarierController extends Controller
             'areaparkir_id' => 'required|max:255|numeric'
         ]);
 
-        $areaparkir = AreaParkir::find($request->areaparkir_id);
+        $areaparkir = Areaparkir::find($request->areaparkir_id);
         // dd($areaparkir->mac);
         if ($user_vehicle == 'mobil') {
             if ($areaparkir->max_car > 0) {
