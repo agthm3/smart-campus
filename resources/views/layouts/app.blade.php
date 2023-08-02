@@ -19,12 +19,12 @@
 <!-- Icons CSS -->
 {{-- @include('includes.resources.css') --}}
 {{-- <link rel="stylesheet" href="{{ asset('css/feather.css') }}"> --}}
-<link rel="stylesheet" href="{{ asset('css/select2.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
 <link rel="stylesheet" href="{{ asset('css/uppy.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/jquery.steps.css') }}">
 <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
-<link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}">>
+<link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}">> --}}
 
 <!-- Date Range Picker CSS -->
 {{-- <link rel="stylesheet" href="asset('css/daterangepicker.css')" /> --}}
@@ -77,7 +77,7 @@
     <script src="{{ asset('dashboard/js/popper.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/moment.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('dashboard/js/simplebar.min.js') }}"></script>
+    {{-- <script src="{{ asset('dashboard/js/simplebar.min.js') }}"></script> --}}
     {{-- <script src="{{ asset('dashboard/js/daterangepicker.js') }}"></script> --}}
     {{-- <script src="{{ asset('dashboard/js/jquery.stickOnScroll.js') }}"></script>
     <script src="{{ asset('dashboard/js/tinycolor-min.js') }}"></script>
