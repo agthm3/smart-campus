@@ -10,7 +10,8 @@ class Labarea extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'mac'
     ];
 
     public function logattendance(){

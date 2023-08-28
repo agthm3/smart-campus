@@ -30,11 +30,13 @@ class LabareaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:255|string'
+            'name' => 'required|max:255|string',
+            'mac' => 'required'
         ]);
 
         Labarea::create([
-            'name' => $request->name 
+            'name' => $request->name, 
+            'mac' => $request->mac
         ]);
 
         return Redirect::route('absensi.index');
