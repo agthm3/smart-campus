@@ -10,7 +10,7 @@ class CommandController extends Controller
 {
     public function index()
     {
-        $commands = Command::latest()->limit(20)->get();
+       $commands = Command::select('id', 'mac', 'status')->latest()->limit(20)->get();
         return response()->json($commands);
     }
 }
