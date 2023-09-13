@@ -23,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/commands', [CommandController::class, 'index']);
 Route::post('/handle-action', [HandleController::class, 'handleAction']);
 Route::post('/indoormonitoring', [IndoorMonitoringController::class, 'store']);
+Route::post('/handle-attendance', [HandleController::class, 'handleAttendance']);

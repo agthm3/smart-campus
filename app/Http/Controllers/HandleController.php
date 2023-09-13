@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Handle;
+use App\Models\Labarea;
+use App\Models\LogAttendance;
 use App\Models\RekapParkir;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -48,6 +50,32 @@ class HandleController extends Controller
         
         return response()->json(['message' => 0]);
     }
+
+    public function handleAttendance(Request $request)
+    {
+        // Menerima request dari sensor pembaca
+        $rfid = $request->input('rfid');
+        $labarea_id = $request->input('labarea_id');
+        
+        // Mencari user berdasarkan RFID
+        $user = User::where('rfid', $rfid)->first();
+        $labarea = Labarea::where('id')->first();
+        
+        // Jika user tidak ditemukan, kembali dengan pesan error
+        if (!$user || !LabArea::find($labarea_id)) {
+            return response()->json(1);
+        }
+        
+        // Simpan ke tabel log_attendances
+        LogAttendance::create([
+            'user_id' => $user->id,
+            'labarea_id' => $labarea_id,
+        ]);
+        
+        // Mengirim pesan untuk membuka
+        return response()->json(['message' => 'open']);
+    }
+
     public function index()
     {
         //
