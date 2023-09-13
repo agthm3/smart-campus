@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'open-barier/store',
-        'api/handle-action'
+        'api/handle-action',
+        'api/indoormonitoring'
     ];
 }

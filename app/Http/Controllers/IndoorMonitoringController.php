@@ -12,7 +12,8 @@ class IndoorMonitoringController extends Controller
      */
     public function index()
     {
-        return view('pages.indoormonitoring.index');
+        $monitoring = IndoorMonitoring::first();
+        return view('pages.indoormonitoring.index', compact('monitoring'));
     }
 
     /**
@@ -28,7 +29,18 @@ class IndoorMonitoringController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    $suhu = $request->input('suhu');
+    $kelembaban = $request->input('kelembaban');
+
+    // Mengambil baris pertama dari tabel atau membuat instance baru jika tabel kosong
+    $monitoring = IndoorMonitoring::firstOrNew([]);
+
+    // Menyimpan atau mengupdate data dengan data terbaru dari sensor
+    $monitoring->suhu = $suhu;
+    $monitoring->kelembaban = $kelembaban;
+    $monitoring->save();
+
+    return response()->json(['message' => 'Data updated successfully']);
     }
 
     /**

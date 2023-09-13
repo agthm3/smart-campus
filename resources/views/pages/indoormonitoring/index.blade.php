@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@dd($monitoring)
     <main role="main" class="main-content">
         <div class="container-fluid">
             <div class="row justify-content-center">

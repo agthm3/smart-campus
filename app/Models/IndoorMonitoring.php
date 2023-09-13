@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class IndoorMonitoring extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'suhu',
+        'kelembaban'
+    ];
 }

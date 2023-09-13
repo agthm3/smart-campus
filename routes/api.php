@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\CommandController;
 use App\Http\Controllers\HandleController;
+use App\Http\Controllers\IndoorMonitoringController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/commands', [CommandController::class, 'index']);
 Route::post('/handle-action', [HandleController::class, 'handleAction']);
+Route::post('/indoormonitoring', [IndoorMonitoringController::class, 'store']);

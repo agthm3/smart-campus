@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('indoor_monitorings', function (Blueprint $table) {
             $table->id();
+            $table->string('suhu');
+            $table->string('kelembaban');
             $table->timestamps();
         });
     }
