@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@dd($monitoring)
     <main role="main" class="main-content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -25,7 +24,7 @@
                                             <div class="col">
                                                 <small class="text-muted mb-1">Suhu</small>
                                                 <h3 class="card-title mb-0">
-                                                    30ºC
+                                                    {{ $monitoring->suhu }}ºC
                                                 </h3>
                                             </div>
                                             <div class="col-4 text-right">
@@ -48,7 +47,7 @@
                                             <div class="col">
                                                 <small class="text-muted mb-1">Huminidty</small>
                                                 <h3 class="card-title mb-0">
-                                                    38%
+                                                    {{ $monitoring->kelembaban }}%
                                                 </h3>
                                             </div>
                                             <div class="col-4 text-right">
