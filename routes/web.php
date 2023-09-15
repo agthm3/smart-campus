@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\AllUserController;
 use App\Http\Controllers\AreaParkirController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataMahasiswaController;
@@ -50,6 +51,9 @@ Route::middleware('auth')->group(function(){
                 Route::get('/pending-user', [PendingUserController::class, 'index'])->name('pendinguser.index');
                 Route::patch('/pending-user/update/{user}', [PendingUserController::class, 'update_confirm'])->name('pendinguser.confirm');
                 Route::patch('/pending-user/reject/{user}', [PendingUserController::class, 'update_reject'])->name('pendinguser.reject');
+
+
+                Route::get('/all-user', [AllUserController::class, 'index'] )->name('allusers.index');
             });
     });
 });

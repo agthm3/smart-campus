@@ -2,6 +2,7 @@
 
 @section('content')
     <main role="main" class="main-content">
+        <script src="https://kit.fontawesome.com/795e24dc42.js" crossorigin="anonymous"></script>
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -63,17 +64,14 @@
                                                 <th>Jabatan</th>
                                                 <th>NIM/NIP</th>
                                                 <th>
-                                                    Kendaraan
+                                                    RFID
                                                 </th>
-                                                <th>
-                                                    Status
-                                                </th>
-                                                <th>Tanggal Dibuat</th>
+
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($pending_user as $item)
+                                            @foreach ($users as $item)
                                                 <tr>
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
@@ -113,38 +111,30 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <small class="">
-                                                            {{ ucfirst($item->kendaraan) }}</small>
-                                                    </td>
-                                                    <td>
-                                                        {{-- <p class="bg-danger text-white">
-                                                            {{ ucfirst($item->status) }}</p> --}}
-                                                        @if ($item->status == 'reject')
-                                                            <p class="bg-danger text-white">
-                                                                {{ ucfirst($item->status) }}</p>
-                                                        @else
-                                                            <p class="bg-warning text-white">
-                                                                {{ ucfirst($item->status) }}</p>
-                                                        @endif
-                                                        {{-- @if ($item->status = 'reject')
-                                                            <p class="bg-danger text-white">
-                                                                {{ ucfirst($item->status) }}</p>
-                                                        @elseif($item->status = 'pending')
-                                                            <p class="bg-warning text-white">
-                                                                {{ ucfirst($item->status) }}</p>
-                                                        @endif --}}
 
+                                                        {{ ucfirst($item->kendaraan) }}
                                                     </td>
-                                                    <td class="">
-                                                        <p>
-                                                            {{ $item->created_at->format('d M Y') }}</p>
-                                                    </td>
+
                                                     <td>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-secondary " type="button"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fas fa-chevron-circle-down"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#">Action</a>
+                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                <a class="dropdown-item" href="#">Something else
+                                                                    here</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    {{-- <td>
                                                         <button class="btn btn-sm more-horizontal" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
-                                                            <span class="sr-only">Action</span> <i
-                                                                class="fas fa-chevron-circle-down"></i>
+                                                            <span class="sr-only">Action</span><i
+                                                                class="fas fa-caret-square-down"></i>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <form action="{{ route('pendinguser.confirm', $item->id) }}"
@@ -164,7 +154,7 @@
                                                                     class="bg-danger text-white form-control">Reject</button>
                                                             </form>
                                                         </div>
-                                                    </td>
+                                                    </td> --}}
                                                 </tr>
                                             @endforeach
 

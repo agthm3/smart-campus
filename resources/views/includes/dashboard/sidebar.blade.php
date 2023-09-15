@@ -86,6 +86,12 @@
                          <span class="ml-3 item-text">Pending User</span>
                      </a>
                  </li>
+                 <li class="nav-item dropdown">
+                     <a href="{{ route('allusers.index') }}" class="nav-link">
+                         <i class="fa fa-solid fa-bars"></i>
+                         <span class="ml-3 item-text">All User</span>
+                     </a>
+                 </li>
              @endif
 
              <li class="nav-item dropdown">

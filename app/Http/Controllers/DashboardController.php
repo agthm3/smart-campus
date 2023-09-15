@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dashboard;
 use App\Models\LogAttendance;
 use App\Models\RekapParkir;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,6 +29,7 @@ class DashboardController extends Controller
     public function noaccess(){
         return view('pages.dashboard.noaccess');
     }
+
 
     /**
      * Show the form for creating a new resource.
