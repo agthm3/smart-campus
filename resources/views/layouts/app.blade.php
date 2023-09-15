@@ -17,20 +17,20 @@
     href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" /> --}}
     <!-- Icons CSS -->
-    {{-- @include('includes.resources.css') --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/feather.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
-<link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
-<link rel="stylesheet" href="{{ asset('css/uppy.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/jquery.steps.css') }}">
-<link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
-<link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}">> --}}
+    @include('includes.resources.css') --}}
+    <link rel="stylesheet" href="{{ asset('css/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/uppy.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.steps.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}">>
 
     <!-- Date Range Picker CSS -->
-    {{-- <link rel="stylesheet" href="asset('css/daterangepicker.css')" /> --}}
+    <link rel="stylesheet" href="asset('css/daterangepicker.css')" />
     <!-- App CSS -->
     <link rel="stylesheet" href="{{ asset('css/app-light.css') }}" id="lightTheme" />
-    {{-- <link rel="stylesheet" href="{{ asset('css/app-dark.css') }}" id="darkTheme" disabled /> --}}
+    <link rel="stylesheet" href="{{ asset('css/app-dark.css') }}" id="darkTheme" disabled />
 </head>
 
 <body class="vertical light">
@@ -74,20 +74,20 @@
     </div>
     <!-- .wrapper -->
     <script src="{{ asset('dashboard/js/jquery.min.js') }}"></script>
-    {{-- <script src="{{ asset('dashboard/js/popper.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dashboard/js/moment.min.js') }}"></script> --}}
+    <script src="{{ asset('dashboard/js/popper.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/moment.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/bootstrap.min.js') }}"></script>
-    {{-- <script src="{{ asset('dashboard/js/simplebar.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dashboard/js/daterangepicker.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dashboard/js/jquery.stickOnScroll.js') }}"></script>
+    <script src="{{ asset('dashboard/js/simplebar.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/daterangepicker.js') }}"></script>
+    <script src="{{ asset('dashboard/js/jquery.stickOnScroll.js') }}"></script>
     <script src="{{ asset('dashboard/js/tinycolor-min.js') }}"></script>
     <script src="{{ asset('dashboard/js/config.js') }}"></script>
     <script src="{{ asset('dashboard/js/d3.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dashboard/js/topojson.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/topojson.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/datamaps.all.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/datamaps-zoomto.js') }}"></script>
     <script src="{{ asset('dashboard/js/datamaps.custom.js') }}"></script>
-    <script src="{{ asset('dashboard/js/Chart.min.js') }}"></script> --}}
+    <script src="{{ asset('dashboard/js/Chart.min.js') }}"></script>
     <script>
         /* defind global options */
         Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
