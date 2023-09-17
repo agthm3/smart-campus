@@ -44,7 +44,7 @@ class HandleController extends Controller
         if ($code_info == 1) {
             Http::post('http://127.0.0.1:8000/api/commands', [
                 'mac' => $mac,
-                'command' => 'open'
+                'command' => '0'
             ]);
         }
         
