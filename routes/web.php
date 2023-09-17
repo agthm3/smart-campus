@@ -54,6 +54,10 @@ Route::middleware('auth')->group(function(){
 
 
                 Route::get('/all-user', [AllUserController::class, 'index'] )->name('allusers.index');
+                Route::get('/all-user/detail/{id}', [AllUserController::class, 'show'])->name('allusers.show');
+                Route::get('/all-user/{id}', [AllUserController::class, 'edit'])->name('allusers.edit');
+                Route::patch('/all-user/{id}', [AllUserController::class,'update'])->name('allusers.update');
+                Route::delete('/all-user/{id}', [AllUserController::class, 'destroy'])->name('allusers.destroy');
             });
     });
 });

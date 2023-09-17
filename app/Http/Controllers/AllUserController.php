@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AllUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AllUserController extends Controller
 {
@@ -37,32 +38,60 @@ class AllUserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AllUser $allUser)
+    public function show($id)
     {
-        //
+        $allUser = User::find($id);
+        
+        if (!$allUser) {
+            return redirect()->route('allusers.index')->with('error', 'User not found');
+        }
+
+        return view('pages.allusers.show', compact('allUser'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AllUser $allUser)
+    public function edit($id)
     {
-        //
+        $allUser = User::find($id);
+
+        return view('pages.allusers.edit', compact('allUser'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AllUser $allUser)
+    public function update(Request $request, $id)
     {
-        //
+        // dd($request->rfid);
+        $allUser = User::find($id);
+
+        $request->validate([
+            'name' => 'string|max:244',
+            'rfid'=> 'string|max:244',
+            'email'=> 'email'
+        ]);
+
+
+        $allUser->update([
+            'name' => $request->name, 
+            'email' => $request->email,
+            'rfid' => $request->rfid,
+        ]);
+
+        return Redirect::route('allusers.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AllUser $allUser)
+    public function destroy($id)
     {
-        //
+        $allUser = User::find($id);
+
+        $allUser->delete();
+
+        return Redirect::back();
     }
 }

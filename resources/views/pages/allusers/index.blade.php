@@ -112,7 +112,7 @@
                                                     </td>
                                                     <td>
 
-                                                        {{ ucfirst($item->kendaraan) }}
+                                                        {{ ucfirst($item->rfid) }}
                                                     </td>
 
                                                     <td>
@@ -122,39 +122,19 @@
                                                                 <i class="fas fa-chevron-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Action</a>
-                                                                <a class="dropdown-item" href="#">Another action</a>
-                                                                <a class="dropdown-item" href="#">Something else
-                                                                    here</a>
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('allusers.show', $item->id) }}">Detail</a>
+                                                                <form action="{{ route('allusers.destroy', $item->id) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button type="submit"
+                                                                        class="form-control dropdown-item bg-danger text-white">Hapus</button>
+                                                                </form>
+
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    {{-- <td>
-                                                        <button class="btn btn-sm more-horizontal" type="button"
-                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="false">
-                                                            <span class="sr-only">Action</span><i
-                                                                class="fas fa-caret-square-down"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <form action="{{ route('pendinguser.confirm', $item->id) }}"
-                                                                method="post">
-                                                                @method('patch')
-                                                                @csrf
-                                                                <input type="hidden" name="status" value="confirm">
-                                                                <button type="submit"
-                                                                    class="form-control bg-success text-white">Confirm</button>
-                                                            </form>
-                                                            <form action="{{ route('pendinguser.reject', $item->id) }}"
-                                                                method="post">
-                                                                @method('patch')
-                                                                @csrf
-                                                                <input type="hidden" name="status" value="reject">
-                                                                <button type="submit"
-                                                                    class="bg-danger text-white form-control">Reject</button>
-                                                            </form>
-                                                        </div>
-                                                    </td> --}}
                                                 </tr>
                                             @endforeach
 

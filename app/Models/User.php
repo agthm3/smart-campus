@@ -24,7 +24,8 @@ class User extends Authenticatable
         'nim',
         'jabatan',
         'kendaraan',
-        'status'
+        'status',
+        'rfid'
     ];
 
     /**
