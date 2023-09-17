@@ -73,7 +73,7 @@ class HandleController extends Controller
         ]);
         
         // Mengirim pesan untuk membuka
-        return response()->json(['message' => 'open']);
+        return response()->json(['message' => '0']);
     }
 
     public function index()
