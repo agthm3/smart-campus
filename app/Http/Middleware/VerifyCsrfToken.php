@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'open-barier/store',
         'api/handle-action',
-        'api/indoormonitoring'
+        'api/indoormonitoring',
+        '/area-parkir/store'
     ];
 }
