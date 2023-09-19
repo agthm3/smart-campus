@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommandAttendance;
 use App\Models\Labarea;
 use App\Models\LogAttendance;
 use App\Models\RekapAbsensiMahasiswa;
@@ -37,8 +38,16 @@ class RekapAbsensiMahasiswaController extends Controller
     {
         $user_id = Auth::id();
         $labarea_id = $request->labarea_id;
-        
+        $labarea = Labarea::find($labarea_id);
 
+        $macAddress = $labarea->mac;
+
+        // dd($macAddress);
+        
+        CommandAttendance::create([
+            'mac' => $macAddress,
+            'status' => 0
+        ]);
         LogAttendance::create([
             'user_id' => $user_id,
             'labarea_id' => $labarea_id,

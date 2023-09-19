@@ -32,9 +32,8 @@ Route::middleware('auth')->group(function(){
         Route::get('/open-barier', [OpenBarierController::class, 'index'])->name('openbarier.index');
         Route::post('/open-barier/store', [OpenBarierController::class, 'masuk'])->name('openbarier.store');
         Route::post('/open-barier/out', [OpenBarierController::class, 'keluar'])->name('openbarier.out');
-
-
         Route::post('/rekap-create', [RekapAbsensiMahasiswaController::class, 'store'])->name('rekapabsensi.store');
+        
             //Middleware admin
             Route::middleware('admin')->group(function(){
                 Route::get('/rekap-parkir', [RekapParkirController::class, 'index'])->name('rekapparkir.index');

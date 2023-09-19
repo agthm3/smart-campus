@@ -13,4 +13,5 @@ class CommandController extends Controller
        $commands = Command::select('id', 'mac', 'status')->latest()->limit(20)->get();
         return response()->json($commands);
     }
+
 }

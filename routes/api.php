@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CommandController;
+use App\Http\Controllers\CommandAttendanceController;
 use App\Http\Controllers\HandleController;
 use App\Http\Controllers\IndoorMonitoringController;
 use Illuminate\Http\Request;
@@ -24,3 +25,4 @@ Route::get('/commands', [CommandController::class, 'index']);
 Route::post('/handle-action', [HandleController::class, 'handleAction']);
 Route::post('/indoormonitoring', [IndoorMonitoringController::class, 'store']);
 Route::post('/handle-attendance', [HandleController::class, 'handleAttendance']);
+Route::get('/attendaces', [CommandAttendanceController::class, 'index']);
