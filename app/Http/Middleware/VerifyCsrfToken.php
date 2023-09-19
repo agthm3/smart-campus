@@ -16,6 +16,6 @@ class VerifyCsrfToken extends Middleware
         'api/handle-action',
         'api/indoormonitoring',
         '/area-parkir/store',
-        '/attendaces'
+        'api/attendaces'
     ];
 }
